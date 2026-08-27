@@ -1,0 +1,20 @@
+import json
+
+# إضافة المعاملة مباشرة إلى الخوارزمية للتحليل الفوري
+sample_transaction = {
+    "tx_id": "TX-9901",
+    "amount": 5000.0,
+    "uses_mixer": True,
+    "micro_wallets_split": 15
+}
+
+# حساب درجة الخطر للخوارزمية
+def evaluate_transaction(tx):
+    risk_score = 0.0
+    if tx["uses_mixer"]:
+        risk_score += 50.0
+    risk_score += min(tx["micro_wallets_split"] * 2.0, 50.0)
+    return risk_score
+
+# نتيجة الفحص
+print(f"Transaction {sample_transaction['tx_id']} Risk Score: {evaluate_transaction(sample_transaction)}")
