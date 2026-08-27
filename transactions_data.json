@@ -1,0 +1,8 @@
+[
+  {
+    "tx_id": "TX-9901",
+    "amount": 5000.0,
+    "uses_mixer": true,
+    "micro_wallets_split": 15
+  }
+]
